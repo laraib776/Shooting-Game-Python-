@@ -1,4 +1,4 @@
-# Shooting Game Python
+# Shooting Game Python.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pygame](https://img.shields.io/badge/Pygame-2.6.1-2E7D32?style=for-the-badge)
@@ -171,7 +171,7 @@ These are ignored by `.gitignore`.
 
 ## Notes
 
-- Use `shooter_game.py` for the main game.
+- Use the `shooter_game.py` for the main game.
 - Keep assets inside `shooter_assets/`.
 - Keep level CSV files inside `levels/`.
 - Build scripts belong in `scripts/`.
@@ -179,6 +179,6 @@ These are ignored by `.gitignore`.
 
 ```text
 ============================================================
-                  Have fun playing!
+                  Have fun playing !!!
 ============================================================
 ```
