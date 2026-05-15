@@ -14,7 +14,21 @@ APP_DIR = os.path.dirname(sys.executable) if getattr(sys, "frozen", False) else 
 RESOURCE_DIR = getattr(sys, "_MEIPASS", APP_DIR)
 
 def resource_path(relative_path):
-    return os.path.join(RESOURCE_DIR, relative_path)
+    direct_path = os.path.join(RESOURCE_DIR, relative_path)
+    if os.path.exists(direct_path):
+        return direct_path
+
+    if relative_path.startswith(("img/", "img\\", "audio/", "audio\\")):
+        asset_path = os.path.join(RESOURCE_DIR, "shooter_assets", relative_path)
+        if os.path.exists(asset_path):
+            return asset_path
+
+    if re.fullmatch(r"level\d+_data\.csv", relative_path):
+        level_path = os.path.join(RESOURCE_DIR, "levels", relative_path)
+        if os.path.exists(level_path):
+            return level_path
+
+    return direct_path
 
 def writable_path(relative_path):
     return os.path.join(APP_DIR, relative_path)
@@ -38,7 +52,13 @@ def level_file_path(level_number):
 
 def available_levels():
     levels = set()
-    for folder in (APP_DIR, RESOURCE_DIR):
+    search_folders = (
+        APP_DIR,
+        os.path.join(APP_DIR, "levels"),
+        RESOURCE_DIR,
+        os.path.join(RESOURCE_DIR, "levels"),
+    )
+    for folder in search_folders:
         if os.path.isdir(folder):
             for filename in os.listdir(folder):
                 match = re.fullmatch(r"level(\d+)_data\.csv", filename)

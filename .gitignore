@@ -7,6 +7,8 @@ __pycache__/
 build/
 dist/
 *.spec
+!packaging/
+!packaging/*.spec
 
 # Local-only documents
 *.docx
