@@ -32,6 +32,10 @@ Shooting-Game-Python-/
   requirements.txt             Python dependencies
   SHOOTER GAME GUIDE.md        Detailed guide
 
+  Downloadable Exe game File/
+    shooter_game.exe           Ready-to-run Windows game
+    Convert Py file to exe.md  EXE build notes
+
   shooter_assets/
     img/                       Game images and animations
     audio/                     Music and sound effects
@@ -68,6 +72,18 @@ git clone https://github.com/laraib776/Shooting-Game-Python-.git
 cd Shooting-Game-Python-
 ```
 
+## Download And Play On Windows
+
+If you only want to play the game on Windows, open:
+
+```text
+Downloadable Exe game File/shooter_game.exe
+```
+
+Download that file and run it. You do not need to install Python, Pygame, or any extra packages for the EXE version.
+
+If Windows shows a warning, choose the option to run anyway only if you downloaded it from this repository. Unsigned PyInstaller apps can show warnings on some computers.
+
 ## Run The Game From Source
 
 Install Python 3.10 or newer first.
@@ -99,6 +115,14 @@ Esc              Quit
 ```
 
 ## Build A Downloadable Windows Game
+
+A prebuilt Windows EXE is included in:
+
+```text
+Downloadable Exe game File/
+```
+
+To rebuild it yourself, use the scripts below.
 
 To create a Windows build folder and ZIP:
 
